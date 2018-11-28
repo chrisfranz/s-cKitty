@@ -1,0 +1,21 @@
+{
+  "name": "solo-ckitty",
+  "version": "1.0.0",
+  "description": "show me them kitties",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/server.js"
+  },
+  "author": "Chris Franz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "pg": "^7.6.1",
+    "pg-hstore": "^2.3.2",
+    "pg-promise": "^8.5.2",
+    "request": "^2.88.0"
+  }
+}
