@@ -1,3 +1,4 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -10,22 +11,25 @@ const database =
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
-
-// app.get('/kitties', (req, res) => {
-//   res.status(200);
-//   res.send('here are my kitties')
-// })
-
-app.get('/cat', eventController.getCat, (req, res) => {
-  res.end();
-})
-
+// serves all data for all cats
+app.get('/cat', 
+  eventController.getCat, 
+  (req, res) => {
+    res.end();
+  })
+// serves image_url for all cats
+app.get('/catPic', 
+  eventController.getCatPic,
+  (req, res) => {
+    res.end();
+  })
+// creates a new cat THIS IS CURRENTLY HARD-CODED, MAKE IT DRY
 app.post('/newCat',
   eventController.addCat, 
   (req, res) => {
     res.end();
   })
-
+// deletes cat by ID number, UPDATE THIS TO CARRY THE ID OF CAT SELECTED BY CLIENT
 app.delete('/killCat',
   eventController.deleteCat,
   (req, res) => {
